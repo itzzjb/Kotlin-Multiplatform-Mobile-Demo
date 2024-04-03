@@ -3,6 +3,7 @@ package io.januda.kmmapp.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -19,7 +20,13 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GreetingView(Greeting().greet())
+                    // Using a column layout to display the greeting and name
+                    Column {
+                        GreetingView(Greeting().greet())
+                        GreetingView(Greeting().name())
+                        // Calling the todaysDate function from the shared module
+                        GreetingView("Today's date is ${Greeting().todaysDate()}")
+                    }
                 }
             }
         }

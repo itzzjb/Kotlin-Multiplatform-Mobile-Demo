@@ -26,6 +26,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             //put your multiplatform dependencies here
+            implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.1")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -43,4 +44,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+}
+dependencies {
+    implementation(libs.androidx.media3.common)
 }
